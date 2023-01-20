@@ -18,7 +18,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const players = await Player.bulkCreate(teamData, {
+  const players = await Player.bulkCreate(playerData, {
     individualHooks: true,
     returning: true,
   });
@@ -35,3 +35,4 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+

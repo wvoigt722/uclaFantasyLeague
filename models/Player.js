@@ -18,7 +18,7 @@ Player.init(
       allowNull: false,
     },
     points_scored: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     rebounds: {
@@ -41,7 +41,6 @@ Player.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       foreignKey: true,
-      autoIncrement: true,
       references: {
         model: 'team',
         key: 'id',
