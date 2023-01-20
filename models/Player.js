@@ -18,7 +18,7 @@ Player.init(
       allowNull: false,
     },
     points_scored: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     rebounds: {
