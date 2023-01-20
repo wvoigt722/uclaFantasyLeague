@@ -35,7 +35,17 @@ User.init(
         len: [8],
       },
     },
+    team_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true,
+      autoIncrement: true,
+      references: {
+        model: 'team',
+        key: 'id',
+    },
   },
+},
   {
     hooks: {
       beforeCreate: async (newUserData) => {
