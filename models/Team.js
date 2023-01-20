@@ -1,11 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
-//const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Team extends Model {
-  //checkPassword(loginPw) {
-    //return bcrypt.compareSync(loginPw, this.password);
-  //}
+  
 }
 
 Team.init(
@@ -20,7 +17,7 @@ Team.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    expiration_date: {
+    /* expiration_date: {
       type: TIMESTAMP,
       allowNull: false,
       unique: true,
@@ -29,12 +26,11 @@ Team.init(
         type: Sequelize.BOOLEAN, 
         allowNull: false, 
         defaultValue: true
-    },
+    }, */
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       foreignKey: true,
-      autoIncrement: true,
       references: {
         model: 'user',
         key: 'id',

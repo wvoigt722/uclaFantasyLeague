@@ -3,8 +3,7 @@ const Team = require('./Team');
 const Player = require('./Player');
 
 User.belongsTo(Team, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  foreignKey: 'user_id'
 });
 
 Team.belongsTo(User, {
