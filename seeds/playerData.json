@@ -1,11 +1,119 @@
 [
   {
-    "name": "Labor James",
+    "name": "Labron James",
     "points_scored": 29.8,
     "rebounds": 8.4,
     "assists": 7.0,
     "steals": 0.8,
     "fantasy_points": 46,
+    "team_id": 1
+  },
+  {
+    "name": "Stephen Curry",
+    "points_scored": 25.5,
+    "rebounds": 5.2,
+    "assists": 6.3,
+    "steals": 0.8,
+    "fantasy_points": 37.8,
+    "team_id": 1
+  },
+  {
+    "name": "Kevin Durant",
+    "points_scored": 29.9,
+    "rebounds": 7.4,
+    "assists": 6.4,
+    "steals": 1,
+    "fantasy_points": 44.7,
+    "team_id": 1
+  },
+  {
+    "name": "Giannis Antetokounmpo",
+    "points_scored": 29.9,
+    "rebounds": 11.6,
+    "assists": 6.4,
+    "steals": 0.4,
+    "fantasy_points": 48.3,
+    "team_id": 1
+  },
+  {
+    "name": "Luka Dončić",
+    "points_scored": 29,
+    "rebounds": 11.6,
+    "assists": 5.3,
+    "steals": 0.6,
+    "fantasy_points": 46.5,
+    "team_id": 1
+  },
+  {
+    "name": "Nikola Jokić",
+    "points_scored": 27.1,
+    "rebounds": 13.8,
+    "assists": 7.9,
+    "steals": 1.2,
+    "fantasy_points": 50,
+    "team_id": 1
+  },
+  {
+    "name": "James Harden",
+    "points_scored": 22,
+    "rebounds": 10.3,
+    "assists": 7.7,
+    "steals": 0.6,
+    "fantasy_points": 40.6,
+    "team_id": 1
+  },
+  {
+    "name": "Joel Embiid",
+    "points_scored": 30.6,
+    "rebounds": 11.7,
+    "assists": 4.2,
+    "steals": 0.4,
+    "fantasy_points": 46.9,
+    "team_id": 1
+  },
+  {
+    "name": "Kawhi Leonard",
+    "points_scored": 19.4,
+    "rebounds": 6.1,
+    "assists": 3.7,
+    "steals": 0.7,
+    "fantasy_points": 29.9,
+    "team_id": 1
+  },
+  {
+    "name": "Brian Allison",
+    "points_scored": 29.8,
+    "rebounds": 10.6,
+    "assists": 4.3,
+    "steals": 0.6,
+    "fantasy_points": 45.3,
+    "team_id": 1
+  },
+  {
+    "name": "Vanessa Chan",
+    "points_scored": 30,
+    "rebounds": 9.6,
+    "assists": 8.3,
+    "steals": 0.8,
+    "fantasy_points": 48.7,
+    "team_id": 1
+  },
+  {
+    "name": "William Voigt",
+    "points_scored": 32,
+    "rebounds": 8.4,
+    "assists": 5,
+    "steals": 0.2,
+    "fantasy_points": 46.6,
+    "team_id": 1
+  },
+  {
+    "name": "Gil Young",
+    "points_scored": 30,
+    "rebounds": 6.4,
+    "assists": 5,
+    "steals": 0.2,
+    "fantasy_points": 41.6,
     "team_id": 1
   }
 ]
