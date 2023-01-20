@@ -1,11 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
-//const bcrypt = require('bcrypt');
+
 const sequelize = require('../config/connection');
 
 class Player extends Model {
-  //checkPassword(loginPw) {
-  //return bcrypt.compareSync(loginPw, this.password);
-  //}
 }
 
 Player.init(
@@ -20,7 +17,7 @@ Player.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    point_total: {
+    points_scored: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -36,7 +33,7 @@ Player.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    points_total: {
+    fantasy_points: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
