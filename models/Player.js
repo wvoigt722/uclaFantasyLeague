@@ -2,8 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class Player extends Model {
-}
+class Player extends Model {}
 
 Player.init(
   {
@@ -18,7 +17,7 @@ Player.init(
       allowNull: false,
     },
     points_scored: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     rebounds: {
@@ -26,16 +25,16 @@ Player.init(
       allowNull: false,
     },
     assists: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     steals: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     fantasy_points: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     team_id: {
       type: DataTypes.INTEGER,
