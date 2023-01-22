@@ -115,5 +115,86 @@
     "steals": 0.2,
     "fantasy_points": 41.6,
     "team_id": 1
+  },
+  {
+    "name": "Jeremy Lin",
+    "points_scored": 37.4,
+    "rebounds": 2.6,
+    "assists": 2.2,
+    "steals": 0.4,
+    "fantasy_points": 45.1,
+    "team_id": 1
+  },
+  {
+    "name": "Jayson Tatum",
+    "points_scored": 31.2,
+    "rebounds": 8.5,
+    "assists": 4.3,
+    "steals": 1.1,
+    "fantasy_points": 45.1,
+    "team_id": 1
+  },
+  {
+    "name": "Ja Morant",
+    "points_scored": 27.2,
+    "rebounds": 5.6,
+    "assists": 7.9,
+    "steals": 1,
+    "fantasy_points": 41.7,
+    "team_id": 1
+  },
+  {
+    "name": "Devin Booker",
+    "points_scored": 27.1,
+    "rebounds": 4.6,
+    "assists": 5.6,
+    "steals": 0.9,
+    "fantasy_points": 38.2,
+    "team_id": 1
+  },
+  {
+    "name": "Anthony Davis",
+    "points_scored": 27.4,
+    "rebounds": 12.1,
+    "assists": 2.6,
+    "steals": 1.3,
+    "fantasy_points": 43.4,
+    "team_id": 1
+  },
+  {
+    "name": "Bradley Beal",
+    "points_scored": 22.5,
+    "rebounds": 3.5,
+    "assists": 5.2,
+    "steals": 1,
+    "fantasy_points": 32.2,
+    "team_id": 1
+  },
+  {
+    "name": "Paul George",
+    "points_scored": 23.2,
+    "rebounds": 5.9,
+    "assists": 5.3,
+    "steals": 1.5,
+    "fantasy_points": 35.9,
+    "team_id": 1
+  },
+  {
+    "name": "Trae Young",
+    "points_scored": 27.1,
+    "rebounds": 2.9,
+    "assists": 9.8,
+    "steals": 1,
+    "fantasy_points": 40.8,
+    "team_id": 1
+  },
+  {
+    "nmae": "Chris Paul",
+    "points_scored": 13.1,
+    "rebounds": 4.2,
+    "assists": 8.3,
+    "steals": 1.5,
+    "fantasy_points": 27.1,
+    "team_id": 1
   }
 ]
