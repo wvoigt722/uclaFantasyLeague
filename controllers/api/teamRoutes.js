@@ -39,13 +39,13 @@ router.get('/:id', async (req, res) => {
 
 // Create a team
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
+  console.log(req);
   try {
     const newTeam = await Team.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-
     res.status(200).json(newTeam);
   } catch (err) {
     res.status(400).json(err);

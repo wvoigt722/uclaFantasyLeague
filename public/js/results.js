@@ -7,3 +7,7 @@ const getTeamData = async () => {
 
   for (let i = 0; i < teams.length; i++) {}
 };
+
+// make a function to compare fantasy scores of all teams and order them from 1st to last
+
+const scoreCompare = () => {};
