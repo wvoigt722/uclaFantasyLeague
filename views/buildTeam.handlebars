@@ -58,7 +58,7 @@
               <th>{{player.fantasy_points}}</th>
               <th><button
                   data-id={{player.id}}
-                  class='material-symbols-outlined'
+                  class='material-symbols-outlined add-player'
                   style='background-color: green;'
                 >add_circle</button></th>
             </tr>
@@ -71,7 +71,7 @@
   </div>
   ​
   <!-- Your Team Table -->
-  <div class='row' style='margin-bottom: 40px;'>
+  <div class='row' id="team-table-container" style='margin-bottom: 40px; display: none;'>
     <div class='col-12'>
       ​
       <h2>
@@ -86,30 +86,7 @@
               style='width: 100%; font-family: serif; border-style: solid; border-color: black;'
             >
               ​
-              <tbody>
-                <tr>
-                  <th scope='row'>Luka Dončić</th>
-                  <th><button
-                      class='material-symbols-outlined'
-                      style='background-color: red;'
-                    >cancel</button></th>
-                </tr>
-                ​
-                <tr>
-                  <th scope='row'>Nikola Jokićv</th>
-                  <th><button
-                      class='material-symbols-outlined'
-                      style='background-color: red;'
-                    >cancel</button></th>
-                </tr>
-                ​
-                <tr>
-                  <th scope='row'>Giannis Antetokounmpo</th>
-                  <th><button
-                      class='material-symbols-outlined'
-                      style='background-color: red;'
-                    >cancel</button></th>
-                </tr>
+              <tbody id="team-table">
                 ​
               </tbody>
               ​
