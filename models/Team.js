@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Team extends Model {
-  
-}
+class Team extends Model {}
 
 Team.init(
   {
@@ -34,9 +32,33 @@ Team.init(
       references: {
         model: 'user',
         key: 'id',
+      },
+    },
+    player_one: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id',
+      },
+    },
+    player_two: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id',
+      },
+    },
+    player_three: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id',
+      },
     },
   },
-},
   {
     sequelize,
     timestamps: false,
