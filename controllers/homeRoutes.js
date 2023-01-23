@@ -22,9 +22,9 @@ router.get('/login', async (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/createteam', async (req, res) => {
   try {
-    res.render('dashboard', {
+    res.render('createteam', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -32,7 +32,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-router.get('/results', withAuth, async (req, res) => {
+router.get('/buildteam', async (req, res) => {
+  try {
+    res.render('buildTeam', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/results', async (req, res) => {
   try {
     res.render('results', {
       logged_in: req.session.logged_in,
