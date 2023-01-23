@@ -55,12 +55,25 @@ router.get('/buildteam', async (req, res) => {
   }
 });
 
+// we want to find and render the team that matches the user_id
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    res.render('dashboard', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/results', async (req, res) => {
   try {
     const teamData = await Team.findAll();
-    const players = playerData.map((player) => player.get({ plain: true }));
+    const teams = teamData.map((team) => team.get({ plain: true }));
     res.render('results', {
       logged_in: req.session.logged_in,
+      teams,
     });
   } catch (err) {
     res.status(500).json(err);
