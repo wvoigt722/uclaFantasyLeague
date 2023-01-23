@@ -57,6 +57,8 @@ router.get('/buildteam', async (req, res) => {
 
 router.get('/results', async (req, res) => {
   try {
+    const teamData = await Team.findAll();
+    const players = playerData.map((player) => player.get({ plain: true }));
     res.render('results', {
       logged_in: req.session.logged_in,
     });
