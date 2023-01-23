@@ -7,33 +7,22 @@ const withAuth = require('../../utils/auth');
 
 // GET ROUTES
 
-// Find all teams
-
-router.get('/', async (req, res) => {
-  try {
-    const teamData = await Team.findAll();
-    res.status(200).json(teamData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // Find a single team
 
-router.get('/:id', async (req, res) => {
-  try {
-    const teamData = await Team.findByPk(req.params.id);
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const teamData = await Team.findByPk(req.params.id);
 
-    if (!teamData) {
-      res.status(404).json({ message: 'No team found with this id!' });
-      return;
-    }
+//     if (!teamData) {
+//       res.status(404).json({ message: 'No team found with this id!' });
+//       return;
+//     }
 
-    res.status(200).json(teamData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(teamData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // POST ROUTES
 
