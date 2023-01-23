@@ -10,7 +10,7 @@ const getPlayerData = async () => {
 const userPlayerChoices = function (possiblePlayers) {
   var playerArray = [];
 
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 12; i++) {
     var randomNum = [Math.floor(Math.random() * possiblePlayers.length)];
     const selectedPlayer = possiblePlayers[randomNum];
     playerArray.push(selectedPlayer);

@@ -34,8 +34,21 @@ router.get('/createteam', async (req, res) => {
 
 router.get('/buildteam', async (req, res) => {
   try {
+    const playerData = await Player.findAll();
+    const players = playerData.map((player) => player.get({ plain: true }));
+
+    var playerArray = [];
+
+    for (let i = 0; i < 12; i++) {
+      var randomNum = [Math.floor(Math.random() * players.length)];
+      const removePlayer = players.splice(randomNum, 1);
+      playerArray.push(removePlayer[0]);
+    }
+    console.log(playerArray);
+
     res.render('buildTeam', {
       logged_in: req.session.logged_in,
+      playerArray,
     });
   } catch (err) {
     res.status(500).json(err);
