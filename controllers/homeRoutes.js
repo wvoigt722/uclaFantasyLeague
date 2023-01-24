@@ -91,7 +91,7 @@ router.get('/results', withAuth, async (req, res) => {
     let teams = teamData.map((team) => team.get({ plain: true }));
     const orderedTeams = [];
 
-    const teamsInfo = teams.map((team) => ({
+    let teamsInfo = teams.map((team) => ({
       ...team,
       fantasy_total:
         team.player_one_info.fantasy_points +
@@ -99,12 +99,11 @@ router.get('/results', withAuth, async (req, res) => {
         team.player_three_info.fantasy_points,
     }));
 
-    let total;
-    for (var i = 0; i < teams.length; i++) {
-      total =
-        teams[i].player_one_info.fantasy_points +
-        teams[i].player_two_info.fantasy_points +
-        teams[i].player_three_info.fantasy_points;
+    for (var i = 0; i < teamsInfo.length; i++) {
+      let total =
+        teamsInfo[i].player_one_info.fantasy_points +
+        teamsInfo[i].player_two_info.fantasy_points +
+        teamsInfo[i].player_three_info.fantasy_points;
       let j = 0;
       while (j < orderedTeams.length) {
         if (
@@ -118,10 +117,10 @@ router.get('/results', withAuth, async (req, res) => {
           break;
         }
       }
-      orderedTeams.splice(j, 0, teams[i]);
+      orderedTeams.splice(j, 0, teamsInfo[i]);
     }
 
-    teams = orderedTeams;
+    teamsInfo = orderedTeams;
 
     const today = dayjs().format('M/D/YYYY');
 
