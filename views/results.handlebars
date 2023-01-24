@@ -8,7 +8,7 @@
       </h1>
     </div>
   </div>
-  {{!-- ​
+  {{! ​
   <!-- #1 -->
   <div class='row' style='margin-bottom: 40px;'>
     <div class='col-12'>
@@ -72,36 +72,51 @@
           ​
         </tbody>
         ​
-      </table> --}}
-      
-      
-      
-        {{#each teams as |team|}}
-        <h2>{{team.name}}</h2>
-              <thead class='table-dark'>
-                <tr>
-                  <th scope='col'>Name</th>
-                  <th scope='col'>Points</th>
-                  <th scope='col'>Rebounds</th>
-                  <th scope='col'>Assists</th>
-                  <th scope='col'>Steals</th>
-                  <th scope='col'>Fantasy Points</th>
-                  <th scope='col'></th>
-                </tr>
-              </thead>
-        <tbody>
+      </table> }}
+
+  {{#each teams as |team|}}
+    <h2>{{team.name}}</h2>
+    <table class='table'>
+      <thead class='table-dark'>
         <tr>
-          <th scope='row'>{{team.player.name}}</th>
-          <th>{{team.player.points_scored}}</th>
-          <th>{{team.player.rebounds}}</th>
-          <th>{{team.player.assists}}</th>
-          <th>{{team.player.steals}}</th>
-          <th>{{team.player.fantasy_points}}</th>
+          <th scope='col'>Name</th>
+          <th scope='col'>Points</th>
+          <th scope='col'>Rebounds</th>
+          <th scope='col'>Assists</th>
+          <th scope='col'>Steals</th>
+          <th scope='col'>Fantasy Points</th>
         </tr>
-        </tbody>
-        {{/each}}
-       
-{{!--       
+      </thead>
+      <tbody>
+        <tr>
+          <th scope='row'>{{team.player_one_info.name}}</th>
+          <th>{{team.player_one_info.points_scored}}</th>
+          <th>{{team.player_one_info.rebounds}}</th>
+          <th>{{team.player_one_info.assists}}</th>
+          <th>{{team.player_one_info.steals}}</th>
+          <th>{{team.player_one_info.fantasy_points}}</th>
+        </tr>
+        <tr>
+          <th scope='row'>{{team.player_two_info.name}}</th>
+          <th>{{team.player_two_info.points_scored}}</th>
+          <th>{{team.player_two_info.rebounds}}</th>
+          <th>{{team.player_two_info.assists}}</th>
+          <th>{{team.player_two_info.steals}}</th>
+          <th>{{team.player_two_info.fantasy_points}}</th>
+        </tr>
+        <tr>
+          <th scope='row'>{{team.player_three_info.name}}</th>
+          <th>{{team.player_three_info.points_scored}}</th>
+          <th>{{team.player_three_info.rebounds}}</th>
+          <th>{{team.player_three_info.assists}}</th>
+          <th>{{team.player_three_info.steals}}</th>
+          <th>{{team.player_three_info.fantasy_points}}</th>
+        </tr>
+      </tbody>
+    </table>
+  {{/each}}
+
+  {{!       
     </div>
   </div>
   ​
@@ -242,5 +257,5 @@
       </table>
       ​
     </div>
-  </div>--}}
+  </div>}}
 </div>
