@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Player, Team, User } = require('../models');
 const withAuth = require('../utils/auth');
+const dayjs = require('dayjs');
 
 router.get('/', async (req, res) => {
   try {
@@ -87,11 +88,31 @@ router.get('/results', withAuth, async (req, res) => {
         { model: Player, as: 'player_three_info' },
       ],
     });
-    const teams = teamData.map((team) => team.get({ plain: true }));
-    console.log(teams);
+    let teams = teamData.map((team) => team.get({ plain: true }));
+    const orderedTeams = [];
+    for(var i=0; i<teams.length; i++){
+      let total = teams[i].player_one_info.fantasy_points + teams[i].player_two_info.fantasy_points + teams[i].player_three_info.fantasy_points;
+      let j=0;
+      while(j<orderedTeams.length){
+        if(total < orderedTeams[j].player_one_info.fantasy_points + orderedTeams[j].player_two_info.fantasy_points + orderedTeams[j].player_three_info.fantasy_points){
+          j++;
+        }else{
+          break;
+        }
+      }
+      orderedTeams.splice(j,0,teams[i]);
+
+    }
+
+    teams = orderedTeams;
+
+
+    const today = dayjs().format('M/D/YYYY');
+
     res.render('results', {
       logged_in: req.session.logged_in,
-      teams,
+      today,
+      teams
     });
   } catch (err) {
     console.log(err);
