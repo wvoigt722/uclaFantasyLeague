@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Player, Team, User } = require('../models');
 const withAuth = require('../utils/auth');
 const dayjs = require('dayjs');
+const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
   try {
@@ -60,8 +61,7 @@ router.get('/buildteam', withAuth, async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    
-    const teamData = await Team.findByPk(req.session.user_id,{
+    const teamData = await Team.findByPk(req.session.user_id, {
       include: [
         { model: Player, as: 'player_one_info' },
         { model: Player, as: 'player_two_info' },
@@ -90,29 +90,45 @@ router.get('/results', withAuth, async (req, res) => {
     });
     let teams = teamData.map((team) => team.get({ plain: true }));
     const orderedTeams = [];
-    for(var i=0; i<teams.length; i++){
-      let total = teams[i].player_one_info.fantasy_points + teams[i].player_two_info.fantasy_points + teams[i].player_three_info.fantasy_points;
-      let j=0;
-      while(j<orderedTeams.length){
-        if(total < orderedTeams[j].player_one_info.fantasy_points + orderedTeams[j].player_two_info.fantasy_points + orderedTeams[j].player_three_info.fantasy_points){
+
+    const teamsInfo = teams.map((team) => ({
+      ...team,
+      fantasy_total:
+        team.player_one_info.fantasy_points +
+        team.player_two_info.fantasy_points +
+        team.player_three_info.fantasy_points,
+    }));
+
+    let total;
+    for (var i = 0; i < teams.length; i++) {
+      total =
+        teams[i].player_one_info.fantasy_points +
+        teams[i].player_two_info.fantasy_points +
+        teams[i].player_three_info.fantasy_points;
+      let j = 0;
+      while (j < orderedTeams.length) {
+        if (
+          total <
+          orderedTeams[j].player_one_info.fantasy_points +
+            orderedTeams[j].player_two_info.fantasy_points +
+            orderedTeams[j].player_three_info.fantasy_points
+        ) {
           j++;
-        }else{
+        } else {
           break;
         }
       }
-      orderedTeams.splice(j,0,teams[i]);
-
+      orderedTeams.splice(j, 0, teams[i]);
     }
 
     teams = orderedTeams;
-
 
     const today = dayjs().format('M/D/YYYY');
 
     res.render('results', {
       logged_in: req.session.logged_in,
       today,
-      teams
+      teamsInfo,
     });
   } catch (err) {
     console.log(err);
