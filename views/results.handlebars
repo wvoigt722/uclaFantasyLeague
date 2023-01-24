@@ -4,12 +4,12 @@
   <div class='row' style='margin-bottom: 40px'>
     <div class='col-12'>
       <h1 style='text-align:center;'>
-        Results ({{today}})
+        Teams presented from Best/Worst ({{today}})
       </h1>
     </div>
   </div>
 
-  {{#each teams as |team|}}
+  {{#each teamsInfo as |team|}}
     <h2>{{team.name}}</h2>
     <table class='table'>
       <thead class='table-dark'>
@@ -46,6 +46,14 @@
           <th>{{team.player_three_info.assists}}</th>
           <th>{{team.player_three_info.steals}}</th>
           <th>{{team.player_three_info.fantasy_points}}</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Fantasy Point Total:</th>
+          <th>{{team.fantasy_total}}</th>
         </tr>
       </tbody>
     </table>
