@@ -69,13 +69,21 @@ router.get('/dashboard', async (req, res) => {
 
 router.get('/results', async (req, res) => {
   try {
-    const teamData = await Team.findAll();
+    const teamData = await Team.findAll({
+      include: [
+        { model: Player, as: 'player_one_info' },
+        { model: Player, as: 'player_two_info' },
+        { model: Player, as: 'player_three_info' },
+      ],
+    });
     const teams = teamData.map((team) => team.get({ plain: true }));
+    console.log(teams);
     res.render('results', {
       logged_in: req.session.logged_in,
       teams,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
