@@ -6,8 +6,6 @@ const addPlayer = async (player_id) => {
         .then((res) => res.json())
         .then((data) => {return data});
 
-    console.log(player.name);
-
     if($('#team-table')[0].childElementCount > 2){
         return;
     }
