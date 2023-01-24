@@ -59,8 +59,18 @@ router.get('/buildteam', async (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
   try {
+    const teamData = await Team.findByPk(1,{
+      include: [
+        { model: Player, as: 'player_one_info' },
+        { model: Player, as: 'player_two_info' },
+        { model: Player, as: 'player_three_info' },
+      ],
+    });
+    const team = teamData.get({ plain: true });
+
     res.render('dashboard', {
       logged_in: req.session.logged_in,
+      team,
     });
   } catch (err) {
     res.status(500).json(err);
