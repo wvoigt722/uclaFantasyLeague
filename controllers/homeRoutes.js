@@ -22,7 +22,7 @@ router.get('/login', async (req, res) => {
   }
 });
 
-router.get('/createteam', async (req, res) => {
+router.get('/createteam', withAuth, async (req, res) => {
   try {
     res.render('createteam', {
       logged_in: req.session.logged_in,
@@ -32,7 +32,7 @@ router.get('/createteam', async (req, res) => {
   }
 });
 
-router.get('/buildteam', async (req, res) => {
+router.get('/buildteam', withAuth, async (req, res) => {
   try {
     const playerData = await Player.findAll();
     const players = playerData.map((player) => player.get({ plain: true }));
@@ -57,7 +57,7 @@ router.get('/buildteam', async (req, res) => {
 
 // we want to find and render the team that matches the user_id
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const teamData = await Team.findByPk(1,{
       include: [
@@ -77,7 +77,7 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-router.get('/results', async (req, res) => {
+router.get('/results', withAuth, async (req, res) => {
   try {
     const teamData = await Team.findAll({
       include: [
