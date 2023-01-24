@@ -38,7 +38,7 @@ Player.init(
     },
     team_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       foreignKey: true,
       references: {
         model: 'team',

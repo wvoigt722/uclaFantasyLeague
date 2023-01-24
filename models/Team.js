@@ -33,9 +33,36 @@ Team.init(
       foreignKey: true,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id'
+      }
     },
-  },
+    player_one: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id'
+      }
+    },
+    player_two: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id'
+      }
+    },
+    player_three: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true,
+      references: {
+        model: 'player',
+        key: 'id'
+      }
+    }
 },
   {
     sequelize,
