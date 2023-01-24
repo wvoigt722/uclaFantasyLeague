@@ -13,12 +13,12 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const teams = await Team.bulkCreate(teamData, {
+  const players = await Player.bulkCreate(playerData, {
     individualHooks: true,
     returning: true,
   });
 
-  const players = await Player.bulkCreate(playerData, {
+  const teams = await Team.bulkCreate(teamData, {
     individualHooks: true,
     returning: true,
   });
