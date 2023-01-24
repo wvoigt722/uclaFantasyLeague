@@ -59,7 +59,8 @@ router.get('/buildteam', withAuth, async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const teamData = await Team.findByPk(1,{
+    
+    const teamData = await Team.findByPk(req.session.user_id,{
       include: [
         { model: Player, as: 'player_one_info' },
         { model: Player, as: 'player_two_info' },
