@@ -21,6 +21,8 @@ const addTeam = async (player_ids) => {
         })
         .catch((err) => {console.error(err)});
     
+    
+    window.location.replace('/dashboard');
 }
 
 $('#submit-team').on('click', function(event){
