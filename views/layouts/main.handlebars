@@ -19,6 +19,18 @@
       rel='stylesheet'
       href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200'
     />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Yesteryear&display=swap'
+      rel='stylesheet'
+    />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@500&display=swap'
+      rel='stylesheet'
+    />
     <link rel='stylesheet' href='/css/style.css' />
     <title>3v3 Fantasy Basketball</title>
   </head>
@@ -31,12 +43,12 @@
       >
         <div class='container'>
           <div class='row'>
-            ​
+
             <!--Image-->
             <div class='col-12 col-lg-6'>
               <img src='assets/bball.png' style='width:100%;' />
             </div>
-            ​
+
             <!-- Navbar -->
             <div class='col-12 col-lg-6' style='align-self: flex-end;'>
               <div
@@ -47,18 +59,21 @@
                 </div>
                 {{#if logged_in}}
                   <div style='align-self: center;'>
-                    <a style='text-decoration:none;' href='/dashboard'>Dashboard</a>
+                    <a
+                      style='text-decoration:none;'
+                      href='/dashboard'
+                    >Dashboard</a>
                   </div>
                   <div style='align-self: center;'>
                     <a style='text-decoration:none;' href='/results'>Results</a>
                   </div>
                   <button class='no-button' id='logout'>logout</button>
                 {{else}}
-                  <a href='/login'>login</a>
+                  <a style='text-decoration:none;' href='/login'>login</a>
                 {{/if}}
               </div>
             </div>
-            ​
+
           </div>
         </div>
       </header>
@@ -81,7 +96,11 @@
       integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN'
       crossorigin='anonymous'
     ></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+      src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
+      integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+      crossorigin='anonymous'
+    ></script>
     <script src='/js/addPlayer.js'></script>
     <script src='/js/addTeam.js'></script>
   </body>
